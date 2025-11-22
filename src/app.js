@@ -3,6 +3,9 @@ import mongoose from 'mongoose';
 import cookieParser from 'cookie-parser';
 import dotenv from 'dotenv'; // 👉 1. Importar dotenv
 
+import swaggerUi from 'swagger-ui-express'; // 👉 Swagger UI
+import { swaggerSpecs } from './docs/swagger.js'; // 👉 Swagger config
+
 dotenv.config(); // 👉 2. Cargar las variables del archivo .env
 
 import usersRouter from './routes/users.router.js';
@@ -26,11 +29,15 @@ mongoose.connect(process.env.MONGO_URL)
 app.use(express.json());
 app.use(cookieParser());
 
+// 👉 Swagger Docs
+app.use('/api/docs', swaggerUi.serve, swaggerUi.setup(swaggerSpecs));
+
 app.use('/api/users', usersRouter);
 app.use('/api/pets', petsRouter);
 app.use('/api/adoptions', adoptionsRouter);
 app.use('/api/sessions', sessionsRouter);
 app.use('/api/mocks', mocksRouter);
+
 app.get('/ping', (req, res) => {
   res.send('pong');
 });
