@@ -9,7 +9,7 @@ const swaggerOptions = {
       description: 'Documentación de la API de mascotas y usuarios',
     },
   },
-  apis: ['./src/routes/*.js'], // ✅ Aquí se escanean tus rutas
+   apis: ['./src/docs/components/users.yaml'],
 };
 
 export const swaggerSpecs = swaggerJSDoc(swaggerOptions);

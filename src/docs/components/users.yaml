@@ -1,0 +1,58 @@
+openapi: 3.0.1
+info:
+  title: Adoption API
+  version: 1.0.0
+  description: Documentación de la API de mascotas y usuarios
+
+paths:
+  /api/users:
+    get:
+      summary: Obtener todos los usuarios
+      tags:
+        - Users
+      responses:
+        '200':
+          description: Lista de usuarios obtenida exitosamente
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: success
+                  payload:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/User'
+
+components:
+  schemas:
+    User:
+      type: object
+      properties:
+        _id:
+          type: string
+          example: 1234567890abcdef
+        first_name:
+          type: string
+          example: Ada
+        last_name:
+          type: string
+          example: Lovelace
+        email:
+          type: string
+          example: ada@coder.com
+        password:
+          type: string
+          example: $2b$10$encryptedPassword
+        age:
+          type: integer
+          example: 30
+        role:
+          type: string
+          enum: [user, admin]
+        pets:
+          type: array
+          items:
+            type: string
