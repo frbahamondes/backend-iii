@@ -16,10 +16,10 @@ export const passwordValidation = async (user, password) =>
 // 🧪 Función para generar mascotas mock
 export const generateMockPets = () => {
   return {
-    name: faker.animal.dog(),
-    breed: faker.animal.dog(),
-    age: faker.number.int({ min: 1, max: 15 }),
-    adopted: faker.datatype.boolean(),
+    name: faker.animal.dog(), // o faker.animal.cat()
+    specie: faker.animal.type(), // ✅ ahora genera "specie"
+    birthDate: faker.date.past({ years: 10 }),
+    adopted: false
   };
 };
 

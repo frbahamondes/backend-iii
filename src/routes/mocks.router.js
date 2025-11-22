@@ -2,10 +2,10 @@
 import { Router } from 'express';
 import { generateMockPets } from '../utils/index.js';
 import { generateMockUsers } from '../utils/mockUsers.js'; // ✅ Importamos la nueva función
+import { usersService, petsService } from '../services/index.js'; // ✅ Agregado para usar servicios
 import petModel from '../dao/models/Pet.js';
 
 const router = Router();
-
 
 // 🐶 GET /api/mocks/mockingpets
 router.get('/mockingpets', async (req, res) => {
@@ -38,7 +38,6 @@ router.get('/mockingpets', async (req, res) => {
   }
 });
 
-
 // 👥 GET /api/mocks/mockingusers
 router.get('/mockingusers', async (req, res) => {
   console.log('✅ MOCKINGUSERS ejecutado con Faker');
@@ -57,6 +56,52 @@ router.get('/mockingusers', async (req, res) => {
     res.status(500).json({
       status: 'error',
       message: error.message,
+    });
+  }
+});
+
+// 📥 POST /api/mocks/generateData
+router.post('/generateData', async (req, res) => {
+  try {
+    const { users = 0, pets = 0 } = req.body;
+
+    const usersCount = parseInt(users);
+    const petsCount = parseInt(pets);
+
+    if (isNaN(usersCount) || isNaN(petsCount)) {
+      return res.status(400).json({
+        status: 'error',
+        message: 'Parámetros inválidos: users y pets deben ser números',
+      });
+    }
+
+    // 👥 Generar usuarios
+    const mockUsers = await generateMockUsers(usersCount);
+    const insertedUsers = await Promise.all(
+      mockUsers.map(user => usersService.create(user))
+    );
+
+    // 🐶 Generar mascotas
+    const mockPets = [];
+    for (let i = 0; i < petsCount; i++) {
+      mockPets.push(generateMockPets());
+    }
+
+    const insertedPets = await Promise.all(
+      mockPets.map(pet => petsService.create(pet))
+    );
+
+    res.status(201).json({
+      status: 'success',
+      message: 'Datos mock generados e insertados correctamente',
+      usersInserted: insertedUsers.length,
+      petsInserted: insertedPets.length,
+    });
+  } catch (error) {
+    console.error('❌ Error en /generateData:', error.message);
+    res.status(500).json({
+      status: 'error',
+      message: 'Error interno al generar datos mock',
     });
   }
 });
