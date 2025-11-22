@@ -1,15 +1,20 @@
-# Etapa de construcción
-FROM node:20-alpine AS build
+# Imagen base
+FROM node:20-alpine
+
+# Crear directorio de trabajo
 WORKDIR /app
+
+# Copiar archivos de dependencias
 COPY package*.json ./
-RUN npm install --production
+
+# Instalar TODAS las dependencias (sin --production)
+RUN npm install
+
+# Copiar el resto del proyecto
 COPY . .
 
-# Etapa de ejecución
-FROM node:20-alpine AS production
-WORKDIR /app
-ENV NODE_ENV=production
-COPY --from=build /app/node_modules ./node_modules
-COPY --from=build /app ./
+# Exponer puerto (coincide con el que usa tu app)
 EXPOSE 8080
+
+# Comando para ejecutar la app
 CMD ["node", "server.js"]
