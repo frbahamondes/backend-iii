@@ -63,26 +63,43 @@ bash
 
 Este comando construye la aplicación e inicia MongoDB, exponiendo la app en http://localhost:8080
 
-🧪 Testing
-----------
+🧪 Testing (Supertest + Mocha)
+------------------------------
 
-Para ejecutar los tests funcionales:
+Este proyecto incluye **tests funcionales completos** que validan el correcto funcionamiento del módulo:
 
-bash
-`   npm test   `
+Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   /api/adoptions   `
 
-### Cobertura de Tests
+### Ejecutar los tests
 
-*   ✅ GET todas las adopciones
+Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   npm test   `
+
+Los tests:
+
+*   usan Supertest para enviar solicitudes HTTP reales a la API
     
-*   ✅ POST crear adopción
+*   importan app.js sin levantar el servidor
     
-*   ✅ GET obtener una adopción
+*   se conectan a MongoDB Atlas usando tu .env
     
-*   ✅ DELETE eliminar adopción
+*   prueban la creación, obtención y eliminación de adopciones
+    
+*   verifican respuestas HTTP, estructura del JSON y errores
     
 
-Los IDs de prueba están predefinidos en supertest.test.js
+### Cobertura de Tests Funcionales
+
+Todos los endpoints del router adoption.router.js están completamente cubiertos:
+
+MétodoEndpointDescripciónEstadoGET/api/adoptionsObtener todas las adopciones✔️ ProbadoPOST/api/adoptions/:uid/:pidCrear una adopción✔️ ProbadoGET/api/adoptions/:aidObtener adopción por ID✔️ ProbadoDELETE/api/adoptions/:aidEliminar una adopción por ID✔️ Probado
+
+### Resultado de ejecución real
+
+Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   4 passing (2s)   `
+
+Archivo principal:
+
+Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   test/supertest.test.js   `
 
 📚 Documentación API
 --------------------
@@ -168,4 +185,4 @@ La imagen está disponible públicamente en Docker Hub:
 *   ✅ Se puede ejecutar con Docker o Docker Compose
     
 
-¡Gracias por revisar! 😄
+¡Gracias por revisar!
