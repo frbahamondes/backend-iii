@@ -134,7 +134,13 @@ text
 🔗 Endpoints Principales
 ------------------------
 
-MétodoEndpointDescripciónGET/api/usersGestión de usuariosGET/api/petsGestión de mascotasPOST/api/adoptionsProcesos de adopciónPOST/api/sessionsAutenticación JWTGET/api/mocksGeneración de datos mock
+| Método | Endpoint | Descripción |
+|--------|----------|-------------|
+| GET | `/api/users` | Gestión de usuarios |
+| GET | `/api/pets` | Gestión de mascotas |
+| POST | `/api/adoptions` | Procesos de adopción |
+| POST | `/api/sessions` | Autenticación JWT |
+| GET | `/api/mocks` | Generación de datos mock |
 
 🐳 Docker Hub
 -------------
