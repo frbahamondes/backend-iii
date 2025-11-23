@@ -107,7 +107,18 @@ env
 
 text
 
-`   src/  ├── controllers/        # Controladores por recurso  ├── dao/               # Acceso a datos y modelos de Mongoose  ├── dto/               # Data Transfer Objects  ├── docs/              # Swagger YAML + configuración  ├── public/            # Imágenes subidas  ├── repository/        # Lógica de acceso a DAO  ├── routes/            # Routers de Express  ├── services/          # Inicialización de servicios  ├── utils/             # Helpers, Faker, Multer  ├── app.js             # Configuración de la app  └── server.js          # Entry point del servidor   `
+` src/
+├── controllers/        # Controladores por recurso
+├── dao/               # Acceso a datos y modelos de Mongoose
+├── dto/               # Data Transfer Objects
+├── docs/              # Swagger YAML + configuración
+├── public/            # Imágenes subidas
+├── repository/        # Lógica de acceso a DAO
+├── routes/            # Routers de Express
+├── services/          # Inicialización de servicios
+├── utils/             # Helpers, Faker, Multer
+├── app.js             # Configuración de la app
+└── server.js          # Entry point del servidor
 
 🔗 Endpoints Principales
 ------------------------
