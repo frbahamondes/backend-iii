@@ -39,7 +39,7 @@ Bienvenido a **AdoptMe**, una API RESTful desarrollada con Node.js, Express, Mo
 
 bash
 
-Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   # Clonar el repositorio  git clone   # Instalar dependencias  npm install  # Configurar variables de entorno  cp .env.example .env  # Ejecutar en desarrollo  npm run dev  # Ejecutar en producción  npm start   `
+`   # Clonar el repositorio  git clone   # Instalar dependencias  npm install  # Configurar variables de entorno  cp .env.example .env  # Ejecutar en desarrollo  npm run dev  # Ejecutar en producción  npm start   `
 
 ### Ejecución con Docker
 
@@ -47,19 +47,19 @@ Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQL
 
 bash
 
-Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   docker build -t frbahamondes/adoptme-backend .   `
+`   docker build -t frbahamondes/adoptme-backend .   `
 
 #### Ejecutar contenedor
 
 bash
 
-Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   docker run -p 8080:8080 frbahamondes/adoptme-backend   `
+`   docker run -p 8080:8080 frbahamondes/adoptme-backend   `
 
 #### Docker Compose (Recomendado)
 
 bash
 
-Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   docker-compose up   `
+`   docker-compose up   `
 
 Este comando construye la aplicación e inicia MongoDB, exponiendo la app en http://localhost:8080
 
@@ -69,8 +69,7 @@ Este comando construye la aplicación e inicia MongoDB, exponiendo la app en ht
 Para ejecutar los tests funcionales:
 
 bash
-
-Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   npm test   `
+`   npm test   `
 
 ### Cobertura de Tests
 
@@ -99,7 +98,7 @@ La API está documentada con Swagger. Accede a la documentación interactiva en:
 
 env
 
-Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   MONGO_URL=mongodb+srv://frbahamondes:backendiii@cluster0.xklou.mongodb.net/test?retryWrites=true&w=majority   `
+`   MONGO_URL=mongodb+srv://frbahamondes:backendiii@cluster0.xklou.mongodb.net/test?retryWrites=true&w=majority   `
 
 ⚠️ **Nota**: Esta URL apunta a MongoDB Atlas. Modifica el valor si usas tu propio cluster.
 
@@ -108,7 +107,7 @@ Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQL
 
 text
 
-Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   src/  ├── controllers/        # Controladores por recurso  ├── dao/               # Acceso a datos y modelos de Mongoose  ├── dto/               # Data Transfer Objects  ├── docs/              # Swagger YAML + configuración  ├── public/            # Imágenes subidas  ├── repository/        # Lógica de acceso a DAO  ├── routes/            # Routers de Express  ├── services/          # Inicialización de servicios  ├── utils/             # Helpers, Faker, Multer  ├── app.js             # Configuración de la app  └── server.js          # Entry point del servidor   `
+`   src/  ├── controllers/        # Controladores por recurso  ├── dao/               # Acceso a datos y modelos de Mongoose  ├── dto/               # Data Transfer Objects  ├── docs/              # Swagger YAML + configuración  ├── public/            # Imágenes subidas  ├── repository/        # Lógica de acceso a DAO  ├── routes/            # Routers de Express  ├── services/          # Inicialización de servicios  ├── utils/             # Helpers, Faker, Multer  ├── app.js             # Configuración de la app  └── server.js          # Entry point del servidor   `
 
 🔗 Endpoints Principales
 ------------------------
