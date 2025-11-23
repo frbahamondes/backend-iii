@@ -90,8 +90,10 @@ Los tests:
 ### Cobertura de Tests Funcionales
 
 Todos los endpoints del router adoption.router.js están completamente cubiertos:
-
-MétodoEndpointDescripciónEstadoGET/api/adoptionsObtener todas las adopciones✔️ ProbadoPOST/api/adoptions/:uid/:pidCrear una adopción✔️ ProbadoGET/api/adoptions/:aidObtener adopción por ID✔️ ProbadoDELETE/api/adoptions/:aidEliminar una adopción por ID✔️ Probado
+*   MétodoEndpointDescripciónEstadoGET/api/adoptionsObtener todas las adopciones ✔️ Probado
+*   POST/api/adoptions/:uid/:pidCrear una adopción✔️ Probado
+*   GET/api/adoptions/:aidObtener adopción por ID✔️ Probado
+*   DELETE/api/adoptions/:aidEliminar una adopción por ID✔️ Probado
 
 ### Resultado de ejecución real
 
